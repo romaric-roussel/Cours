@@ -1,0 +1,44 @@
+div table{
+    display: block;
+    width: 900px;
+    height: 900px;
+    margin-left: auto;
+    margin-right: auto;
+
+
+}
+.joueur{
+    display: block;
+    width: 200px;
+    height: 100px;
+    float: left;
+}
+.score {
+    display: block;
+    height: 100px;
+    float: left;
+}
+
+.point {
+    display: block;
+    width: 200px;
+    height: 100px;
+    float: left;
+}
+
+td{
+    border: 1px solid black;
+    width: 300px;
+    height: 300px;
+    text-align: center;
+}
+table
+{
+    border-collapse: collapse; 
+}
+.croix{
+    font-size: 200px;
+}
+.cercle{
+    font-size: 200px;
+}

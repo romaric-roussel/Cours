@@ -1,0 +1,116 @@
+GIT:
+
+logiciel distribueé
+Gratuit
+Très rapide
+Travail par branches simple à mettre en oeuvre
+Site web collaboritifs : gitlab/github
+
+getting started:
+
+Git clone / Git init
+
+les commandes :
+
+local : git commit
+		git status
+		git diff
+
+message de commit :
+
+[feat] :new fonctionaliter
+[task] :modif/amelioration de la fonctionaliter en cours
+[fix] :correction suite a une recette ( interne ou client)
+
+git log : pour voir tous les commits d'un projet, le plus recent en 1er.
+git log -p<file> : montrer les modifications aporté a un fichier particulier
+
+
+git blame<file> : voir qui a modifié quoi et quand
+
+Les branches et les tags:
+
+
+quand : pour corriger une liste de bug p
+	    pour developper une new fonctionaliter
+		pour gerer la mise en production d'une appli
+
+commment : lister branche existante : git branch -av
+			changer la branche HEAD : git checkout <branch>
+			cree une nouvelle branche : git branch<new-branch>
+
+tagger une version::
+
+utiliser principalement pour repertorier les versions de mise en. production.Permet de pouvoir revenir facilement à une version precise.
+
+Mise à jour et production:
+
+Gestion des 'remote'
+
+Lister les differents remote : git remote-v
+ajouter un remote: git remote add<short_name><url>
+
+dl nouveauté d'un remote git fetch
+telecharger +integrer les nouveauté : git pull < remote><branch>
+Publier les changements locaux sur un remote: git push<remote><branch>
+
+Recuperer le travail des collegues
+
+git merge / git rebase
+
+ctrl Z:
+
+supprimer les modif en local : git reset -hard HEAD
+idem pour une fichier specifique : git checkout HEAD <file>
+annuler un commit : git revert<commit>
+ATTENTION : produit un nouveau commit avec les modification inverse au commit qu'on veut annuler
+Reset le pointer HEAD a un commit précédent :
+	en supprimant les changements : git reset-hard<commit>
+	en conservant les modification locals : git reset<commit>
+
+Client Git:
+
+Source Tree:
+	Gratuit
+	Interface
+
+GitHub :
+
+Quel Protocole?
+
+Git : le plus efficace
+HTTP: vivement déconseiller depuis l'apparition du HTTPS
+HTTPS: + sécurisé mais plus lent, conseiller si on doit accéder aux dépôt en dehors de l'enteprise
+SSH: idem mais évite de saisir les des mdp en permanence => chiffrer les données
+
+SSH = chiffrement asymétrique  pour s'échanger la clé secrète + chiffrement symétrique pour communiquer ensuite
+
+Ajouter votre clé ssh
+
+1/ crée le répertoire cachée ssh
+
+Bien config son .gitignore
+Build : .apk,.ap_
+ART(android run time)/dalvik: .dex : binaires pour la machine virtuelle d'android studio
+Fichier java compilée : .class
+Gradle : import de librairie : .gradle
+Librairies packages : .war ,.ear
+
+Git Flow
+
+Master
+Hotfix
+Release
+Develop
+Feature
+
+GitHub flow 
+
+Gestion des conflits
+
+Branche master:contient les fichier hello.md avec un signe de texte" hello les amis"
+
+
+
+
+
