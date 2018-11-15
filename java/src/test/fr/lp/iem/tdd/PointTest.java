@@ -12,7 +12,7 @@ public class PointTest {
 
     @Test
     public void distance() {
-      (p.distance(p2));
+
     }
 
     @Test

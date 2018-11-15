@@ -1,0 +1,7 @@
+- Le reel
+- Le syteme geodesiques : Demi grand axe , facteur applatissement, meridien de reference;
+-les donnees geographiques : fichier sig , base de donnee
+-Le modele interne de donnee : array [], objets
+-Les traitement, calcul itineraire : Djiksta
+- Le resultat : array ; fichiers
+-Le visuel : application metier, outils sig : qgis,web.

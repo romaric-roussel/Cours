@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<playground version='6.0' target-platform='ios' display-mode='rendered' executeOnSourceChanges='false' timelineScrubberEnabled='true'>
+    <pages>
+        <page name='Intro'/>
+        <page name='Structures de controle'/>
+        <page name='Fonctions et closures'/>
+        <page name='Objets et classes'/>
+        <page name='Enumerations et structures'/>
+        <page name='Protocoles et extensions'/>
+        <page name='Gestion des erreurs'/>
+        <page name='Generiques'/>
+        <page name='Optionals'/>
+        <page name='Images dans les playgrounds'/>
+    </pages>
+</playground>
