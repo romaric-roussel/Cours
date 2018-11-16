@@ -257,7 +257,7 @@ tab = Array(-2...2)
 */
 var tableDeHuit = [Int]()
 for i in 0...10 {
-    tableDeHuit[i] = (8*i)
+    tableDeHuit.append(8*i)
 }
 print(tableDeHuit)
 
@@ -319,7 +319,7 @@ case (0, 0):
 case (_, 0):
     print("(\(somePoint.0), 0) is on the x-axis")
     
-case (0, _):
+case (1, _):
     print("(0, \(somePoint.1)) is on the y-axis")
     
 case (-2...2, -2...2):
