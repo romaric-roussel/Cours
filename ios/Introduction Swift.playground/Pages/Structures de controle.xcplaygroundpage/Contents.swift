@@ -266,7 +266,7 @@ print(tableDeHuit)
 
 
 let base = 2
-let power = 10
+let power = 2
 var result = 1
 
 for _ in 1...power {
@@ -279,7 +279,7 @@ print("\(base) to the power \(power) is \(result)")
 //:
 //: Utilisation des intervalles
 
-let approximateCount = 62
+let approximateCount = 0
 
 let countedThings = "moons orbiting Saturn"
 
@@ -309,7 +309,7 @@ print("There are \(naturalCount) \(countedThings).")
 
 //: Switch sur des tuples
 //:
-let somePoint = (1, 1)
+let somePoint = (3, 0)
 
 switch somePoint {
     
@@ -332,12 +332,14 @@ default:
 //: Switch avec récupération de la valeur (*value binding*)
 //:
 
-let anotherPoint = (2, 0)
+let anotherPoint = (2, 1)
 
 switch anotherPoint {
     
 case (let x, 0):
     print("on the x-axis with an x value of \(x)")
+case (let x, _):
+    print("on the x-axis with an x value of \(x) and \(anotherPoint.1)")
     
 case (0, let y):
     print("on the y-axis with a y value of \(y)")
@@ -348,7 +350,7 @@ case let (x, y):
 
 //: Switch avec des clauses `where` (*value binding*)
 //:
-let yetAnotherPoint = (1, -1)
+let yetAnotherPoint = (78.6, 1.3)
 
 switch yetAnotherPoint {
     
@@ -393,6 +395,22 @@ greet(person: ["name": "Jane", "location": "Cupertino"])
 
 func greetWithIf(person: [String: String]) {
 
+    let name = person["name"]
+    
+    if let name = name {
+        print("Hello \(name)!")
+
+    }else {
+        print("I hope the weather is nice near you.")
+    }
+    
+    let location = person["location"]
+    if location != nil {
+        print("I hope the weather is nice in \(location!).")
+    }else {
+    print("I hope the weather is nice near you.")
+}
+    
     
 }
 

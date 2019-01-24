@@ -3,10 +3,10 @@
 //: Utiliser `func` pour déclarer une fonction, `->` sépare la liste de paramètres du type de retour.
 //: A la différence de java, il est possible de déclarer une fonction globale, il n'est pas nécessaire de créer une classe. Cette solution est à utiliser avec des pincettes puisqu'un nom global ne peut être utilisé qu'une fois.
 //:
-func greet(name: String, day: String) -> String {
-    return "Hello \(name), today is \(day)."
+func greet(name: String, day: String, coins :Int) -> String {
+    return "Hello \(name), today is \(day), you have \(coins) coins."
 }
-greet(name: "Bob", day: "Tuesday")
+greet(name: "Bob", day: "Tuesday", coins: 14)
 /*:
  * callout(Exercice):
     Ajouter un paramètre coins de type `Int` permettant d'accueillir un joueur en lui annonçant le nombre de pièces qu'il possède.
@@ -37,7 +37,7 @@ func multiplyBy(_ x: Int, _ y:Int = 2) -> Int {
     return x * y
 }
 
-multiplyBy(4, 6)
+multiplyBy(4, 8)
 multiplyBy(4)
 
 func hello(name: String = "Mr. Unknown") -> String {
@@ -80,15 +80,7 @@ print(statistics.2)
 
 //: Les fonctions peuvent avoir un nombre d'arguments variables (*variadic*), ils sont transmis à la fonction sous forme de tableau.
 //:
-func sumOf(_ numbers: Int...) -> Int {
-    var sum = 0
-    for number in numbers {
-        sum += number
-    }
-    return sum
-}
-sumOf()
-sumOf(42, 597, 12)
+
 
 
 /*:
@@ -98,6 +90,50 @@ sumOf(42, 597, 12)
     * Ecrire une fonction moyOf qui prendra un nombre d'arguments variable (de type `Int`) et qui retournera un Double? contenant la moyenne de ses arguments s'il y a au moins un argument et nil sinon (utiliser la clause `guard`).
     * Proposer une alternative moyOf2 permettant de forcer l'utilisateur à fournir au moins 2 arguments.
 */
+func sum(_ numbers: [Int])-> Int {
+    var sum = 0
+    for number in numbers {
+        sum += number
+    }
+    return sum
+}
+func sumOf(_ numbers: [Int]) -> Int {
+   return sum(numbers)
+}
+sum([1,2,3])
+sumOf([1,2,3])
+
+func moyOf(_ arg:Int...) ->Double?{
+    guard arg.count > 0 else {
+        return nil
+    }
+    var somme = 0
+    
+    for args in arg {
+        somme += args
+    }
+    let result:Double = Double(somme/arg.count)
+    return result
+}
+
+func moyOf2(_ arg1:Int,_ arg2:Int,_ arg:Int...) ->Double?{
+    
+    var somme = 0.0
+    let result:Double?
+    if(arg.count>0){
+        somme = Double(arg1 + arg2)
+        for args in arg {
+            somme += Double(args)
+        }
+        result = somme/Double((arg.count+2))
+    }else {
+        somme = Double(arg1 + arg2)
+        result = somme/2
+    }
+    
+    return result
+}
+moyOf2(1,2)
 
 //: Les fonctions peuvent être imbriquées (*nested*). Les fonctions internes ont accès à toutes les variables déclarées dans la fonction externe.
 //:
